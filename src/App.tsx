@@ -1,34 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(false)
+
+  // Load initial count from localStorage
+  useEffect(() => {
+    const stored = localStorage.getItem('global-counter')
+    if (stored) {
+      setCount(parseInt(stored, 10))
+    }
+  }, [])
+
+  const incrementCount = () => {
+    const newCount = count + 1
+    setCount(newCount)
+    localStorage.setItem('global-counter', newCount.toString())
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          HELLO! ITS ME SOPH HELLO
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app">
+      <nav className="navbar">
+        <div className="nav-left">
+          <h2>Sophs.Space</h2>
+        </div>
+        <div className="nav-right">
+          <button className="nav-button">Home</button>
+          <button className="nav-button">Projects</button>
+          <button className="nav-button">Blog</button>
+          <button className="nav-button">Socials</button>
+        </div>
+      </nav>
+      
+      <main className="main-content">
+        <h1> Hi, It's Me, Soph! This is my website, 
+          and it's a work in progress...</h1>
+        <div className="counter-section">
+          <h1>Global Visitor Counter</h1>
+          <button 
+            className="counter-button" 
+            onClick={incrementCount}
+            disabled={loading}
+          >
+            {loading ? 'Loading...' : `Count: ${count}`}
+          </button>
+          <p className="counter-description">
+            This count syncs across all visitors!
+          </p>
+        </div>
+      </main>
+    </div>
   )
 }
 
