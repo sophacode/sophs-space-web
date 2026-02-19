@@ -22,19 +22,17 @@ function App() {
     <div className="app">
       <nav className="navbar">
         <div className="nav-left">
-          <h2>Sophs.Space</h2>
+          <img src="/nobgdark.svg" alt="Sophs.Space" className="nav-logo" />
         </div>
         <div className="nav-right">
-          <button className="nav-button">Home</button>
-          <button className="nav-button">Projects</button>
-          <button className="nav-button">Blog</button>
-          <button className="nav-button">Socials</button>
+          <a href="/" className="nav-button">Home</a>
+          <a href="/projects/" className="nav-button">Projects</a>
+          <a href="/blog/" className="nav-button">Blog</a>
         </div>
       </nav>
-      
       <main className="main-content">
-        <h1> Hi, It's Me, Soph! This is my website, 
-          and it's a work in progress...</h1>
+        <h2> Hi, I'm Soph! This is my website, 
+          and it's a work in progress...</h2>
         <div className="counter-section">
           <h1>Global Visitor Counter</h1>
           <button 
@@ -44,7 +42,7 @@ function App() {
             Count: {count}
           </button>
           <p className="counter-description">
-            This count syncs across all visitors!
+            This count will sync across all visitors soon..
           </p>
         </div>
       </main>

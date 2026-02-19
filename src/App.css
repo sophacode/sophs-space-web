@@ -16,13 +16,15 @@
   box-sizing: border-box;
 }
 
-.nav-left h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-right {
@@ -39,6 +41,8 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-button:hover {
@@ -49,9 +53,17 @@
 .main-content {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+}
+
+.main-logo {
+  width: 200px;
+  height: 200px;
+  margin: 2rem 0;
+  object-fit: contain;
 }
 
 .counter-section {
@@ -93,4 +105,9 @@
   margin-top: 1.5rem;
   color: #888;
   font-size: 1.1rem;
+}
+
+.main-logo {
+  width: 500px;  
+  height: 500px;
 }
