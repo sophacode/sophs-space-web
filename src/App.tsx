@@ -3,7 +3,6 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [loading, setLoading] = useState(false)
 
   // Load initial count from localStorage
   useEffect(() => {
@@ -41,9 +40,8 @@ function App() {
           <button 
             className="counter-button" 
             onClick={incrementCount}
-            disabled={loading}
           >
-            {loading ? 'Loading...' : `Count: ${count}`}
+            Count: {count}
           </button>
           <p className="counter-description">
             This count syncs across all visitors!
