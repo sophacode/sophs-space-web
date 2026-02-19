@@ -12,13 +12,6 @@
 	},
 	"compatibility_flags": [
 		"nodejs_compat"
-	],
-	"kv_namespaces": [
-		{
-			"binding": "COUNTER_KV",
-			"id": "preview_id",
-			"preview_id": "preview_id"
-		}
 	]
 	/**
 	 * Smart Placement
