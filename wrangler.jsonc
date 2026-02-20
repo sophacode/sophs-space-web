@@ -6,7 +6,7 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "sophs-space-web",
 	"compatibility_date": "2026-02-12",
-	"pages_build_output_dir": "./dist",
+	"pages_build_output_dir": "./public",
 	"observability": {
 		"enabled": true
 	},
