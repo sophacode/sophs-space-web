@@ -14,8 +14,43 @@
 body {
   font-family: 'Anka/Coder', monospace;
   background-color: #242424;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/digitalmoonsbg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: rgba(255, 255, 255, 0.87);
   min-height: 100vh;
+}
+
+a {
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #747bff;
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+time {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.addendum time {
+  margin-bottom: 1rem;
 }
 
 .navbar {
@@ -66,6 +101,15 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -183,6 +227,16 @@ h1 {
   color: #646cff;
 }
 
+.fleuron {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 2rem 0;
+  letter-spacing: 0.1em;
+}
+
+
 .full-blog-post {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -209,7 +263,8 @@ h1 {
   line-height: 1.8;
 }
 
-.post-content p {
+.post-content p,
+.addendum p {
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.87);
 }
