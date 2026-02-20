@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/tablogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST_TITLE - Soph's Blog</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/">
+          <img src="/nobgdark.svg" alt="Sophs.Space" class="nav-logo" />
+        </a>
+      </div>
+      <div class="nav-right">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/projects/" class="nav-button">Projects</a>
+        <a href="/blog/" class="nav-button">Blog</a>
+      </div>
+    </nav>
+    
+    <div class="content blog-post-content">
+      <nav class="breadcrumb">
+        <a href="/blog/" class="breadcrumb-link">← Back to Blog</a>
+      </nav>
+      
+      <article class="full-blog-post">
+        <header class="post-header">
+          <h1>POST_TITLE</h1>
+          <div class="post-meta">
+            <time class="date">POST_DATE</time>
+          </div>
+        </header>
+        
+        <div class="post-content">
+          <p>POST_EXCERPT</p>
+          
+          <p>Your full blog post content goes here. Write as much as you want!</p>
+          
+          <!-- Add more content as needed -->
+          <h2>Section Title</h2>
+          <p>More content...</p>
+          
+          <!-- Example list -->
+          <ul>
+            <li>Point 1</li>
+            <li>Point 2</li>
+            <li>Point 3</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
+
+<!-- 
+INSTRUCTIONS FOR CREATING A NEW BLOG POST:
+
+1. Copy this template file
+2. Rename it to your-post-title.html (use lowercase, hyphens for spaces)
+3. Replace the following placeholders:
+   - POST_TITLE: Your blog post title
+   - POST_DATE: Date in format "February 20, 2026"
+   - POST_EXCERPT: Brief description/first paragraph
+4. Add your content in the post-content div
+5. Save the file in /public/blog/posts/
+6. Update /public/blog/index.html to add a link to your new post:
+
+Add this to the blog-posts div:
+<article class="blog-post">
+  <h2><a href="/blog/posts/your-post-title.html" class="blog-post-link">POST_TITLE</a></h2>
+  <div class="date">POST_DATE</div>
+  <p>POST_EXCERPT</p>
+  <a href="/blog/posts/your-post-title.html" class="read-more">Read more →</a>
+</article>
+-->
