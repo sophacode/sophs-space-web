@@ -9,6 +9,7 @@
   </head>
   <body class="home-page">
     <div class="app">
+
       <nav class="navbar">
         <div class="nav-left">
           <h1>> Soph's Space</h1>
@@ -18,13 +19,127 @@
           <a href="/projects/" class="nav-button">Projects</a>
           <a href="/blog/" class="nav-button">Blog</a>
         </div>
+
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+
+        <div class="mobile-nav-menu">
+          <a href="/" class="mobile-nav-button">Home</a>
+          <a href="/projects/" class="mobile-nav-button">Projects</a>
+          <a href="/blog/" class="mobile-nav-button">Blog</a>
+        </div>
       </nav>
+
       <main class="main-content">
-        <h2>Hi, I'm Soph! This is my website, and it's a work in progress...</h2>
-        <div class="counter-section">
+        <h1>Welcome to..</h1>
         <img src="/nobgdark.svg" alt="Logo of Sophs.Space" class="center-logo">
+
+        <div class="about-me-section">
+          <h2>About me ｡･:*˚:✧｡</h2>
+            <p> Hi! My name is Sophia Advincula, an undergrad Software Engineer from
+              the UK. I like to fill every second of my free time with anything I'm 
+              interested in - have a look around this site to find out what I get up to.
+              See ya round! :D
+            </p>
+        </div>
+
+        <div class="tab-container">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="showTab('contacts')">
+              Contacts & Socials
+            </button>
+            <button class="tab-btn" onclick="showTab('interests')">
+              Personal Interests
+            </button>
+            <button class="tab-btn" onclick="showTab('coding')">
+              Coding & Tech
+            </button>
+          </div>
+          
+          <div class="tab-content-box">
+            <div class="tab-content active" id="contacts">
+              <h3>Where else can you find me?</h3>
+              <div class="tab-links">
+                  <a href="https://www.instagram.com/soph.advinc/" class="insta-link">
+                    <img src="/brand-instagram.svg" alt="Instagram" class="contact-icon">
+                    Instagram
+                  </a>
+                  <a href="https://www.linkedin.com/in/soph-advincula" class="linkedin-link">
+                    <img src="/brand-linkedin.svg" alt="LinkedIn" class="contact-icon">
+                    LinkedIn
+                  </a>
+                  <a href="mailto:soph.advincula@gmail.com" class="email-link">
+                    <img src="/mail.svg" alt="Email" class="contact-icon">
+                    Email
+                  </a>
+                  <a href="https://github.com/sophacode" class="github-link">
+                    <img src="/brand-github.svg" alt="GitHub" class="contact-icon">
+                    Github
+                  </a>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="interests">
+              <h3>Interests</h3>
+                <p>i like a lotta things lel</p>
+            </div>
+            
+            <div class="tab-content" id="coding">
+              <h3>Code & Tech</h3>
+                <p> i liek tech</p>
+            </div>
+          </div>
         </div>
       </main>
+      <footer class="footer">
+        <div class="footer-left">
+          <p>© 2026 Soph's Space</p>
+        </div>
+        <div class="footer-right">
+          <p>Something here..</p>
+        </div>
+      </footer>
     </div>
+    
+    <script>
+      function showTab(tabId) {
+        // Remove active class from all tab buttons and content
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => button.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked tab button
+        event.target.classList.add('active');
+        
+        // Show corresponding tab content
+        document.getElementById(tabId).classList.add('active');
+      }
+      
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

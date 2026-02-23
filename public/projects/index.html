@@ -8,42 +8,85 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="projects-page">
-    <nav class="navbar">
-      <div class="nav-left">
-        <a href="/"><h1>> Soph's Projects</h1></a>
-      </div>
-      <div class="nav-right">
-        <a href="/" class="nav-button">Home</a>
-        <a href="/projects/" class="nav-button">Projects</a>
-        <a href="/blog/" class="nav-button">Blog</a>
-      </div>
-    </nav>
-    
-    <div class="content">
-      <h1>My Projects</h1>
-      <p>Here are some of the things I've been working on...</p>
-      <p>It's mainly coursework I've done for Uni</p>
+    <div class="app">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="/"><h1>> Soph's Projects</h1></a>
+        </div>
+        <div class="nav-right">
+          <a href="/" class="nav-button">Home</a>
+          <a href="/projects/" class="nav-button">Projects</a>
+          <a href="/blog/" class="nav-button">Blog</a>
+        </div>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+        <div class="mobile-nav-menu">
+          <a href="/" class="mobile-nav-button">Home</a>
+          <a href="/projects/" class="mobile-nav-button">Projects</a>
+          <a href="/blog/" class="mobile-nav-button">Blog</a>
+        </div>
+      </nav>
       
-      <div class="projects-grid">
-        <div class="project-card">
-          <h2>1st year Programming CW</h2>
-          <p>What did I do here.. Oh yeah! a Maze Solver in 1st year</p>
-        </div>
+      <div class="content">
+        <h1>My Projects</h1>
+        <p>Here are some of the things I've been working on...</p>
+        <p>It's mainly coursework I've done for Uni</p>
         
-        <div class="project-card">
-          <h2>2nd year AI CW</h2>
-          <p>Oh this was a pain. I want to improve it someday but i'm far too busy</p>
-        </div>
-        
-        <div class="project-card">
-          <h2>This website!</h2>
-          <p>Through sheer willpower and boredom of doing the work I was meant
-            to be doing, I ended up coding a whole website with HTML, CSS, JavaScript and 
-            a lot of lucozade. It's still a WIP but it'll evolve into something great...
-            hopefully
-          </p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h2>1st year Programming CW</h2>
+            <p>What did I do here.. Oh yeah! a Maze Solver in 1st year</p>
+          </div>
+          
+          <div class="project-card">
+            <h2>2nd year AI CW</h2>
+            <p>Oh this was a pain. I want to improve it someday but i'm far too busy</p>
+          </div>
+          
+          <div class="project-card">
+            <h2>This website!</h2>
+            <p>Through sheer willpower and boredom of doing the work I was meant
+              to be doing, I ended up coding a whole website with HTML, CSS, JavaScript and 
+              a lot of lucozade. It's still a WIP but it'll evolve into something great...
+              hopefully
+            </p>
+          </div>
         </div>
       </div>
+      <footer class="footer">
+        <div class="footer-left">
+          <p>© 2026 Soph's Space</p>
+        </div>
+        <div class="footer-right">
+            <p> something here..</p>
+        </div>
+      </footer>
     </div>
+    
+    <script>
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

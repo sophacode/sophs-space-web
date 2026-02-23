@@ -2,6 +2,8 @@
    FONTS & IMPORTS
    =============================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
 @font-face {
   font-family: 'Anka/Coder';
   src: url('/AnkaCoder-r.ttf') format('truetype');
@@ -20,9 +22,9 @@
 }
 
 body {
-  font-family: 'Anka/Coder', monospace;
+  font-family: 'Roboto Slab', serif;
   background-color: #242424;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('/digitalmoonsbg.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/digitalmoonsbg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -123,6 +125,7 @@ time {
 .nav-left h1 {
   color: rgba(255, 255, 255, 0.87);
   font-size: 2rem;
+  font-family: 'Anka/Coder', monospace;
   background: none;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
@@ -133,7 +136,7 @@ time {
   margin: 0; 
   letter-spacing: .1em; 
   animation: typewriter 4s steps(20) 1s 1 normal both,
-             blinkTextCursor 500ms steps(2) 15 normal;
+             blinkTextCursor 500ms steps(2) infinite normal;
 }
 
 @keyframes typewriter {
@@ -163,12 +166,56 @@ time {
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  font-family: inherit;
+  font-family: 'Anka/Coder', monospace;
 }
 
 .nav-button:hover {
   border-color: #646cff;
   background-color: rgba(100, 108, 255, 0.1);
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+  font-family: 'Anka/Coder', monospace;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-right p {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-family: 'Anka/Coder', monospace;
+}
+
+.footer-link:hover {
+  color: #646cff;
 }
 
 /* ===============================================
@@ -179,6 +226,12 @@ time {
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.blog-page .content {
+  max-width: none;
+  margin: 0;
+  padding: 4rem 5rem;
 }
 
 .breadcrumb {
@@ -219,7 +272,7 @@ time {
   width: 450px;
   height: auto;
   display: block;
-  margin: 4rem auto;
+  margin: 3rem auto;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -228,12 +281,49 @@ time {
           transform: translateY(0px);
         }
         50% {
-          transform: translateY(-10px);
+          transform: translateY(-15px);
         }
         100% {
           transform: translateY(0px);
         }
       }
+
+/* ===============================================
+   ABOUT ME SECTION
+   =============================================== */
+
+.about-me-section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 3rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: left;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-me-section:hover {
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+.about-me-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.about-me-section p {
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about-me-section p:last-child {
+  margin-bottom: 0;
+}
 
 
 /* ===============================================
@@ -399,4 +489,363 @@ time {
 
 .addendum time {
   margin-bottom: 1rem;
+}
+
+/* ===============================================
+   DROPDOWN MENUS
+   =============================================== */
+
+.dropdown-menu-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.87);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 180px;
+  justify-content: space-between;
+}
+
+.dropdown-btn:hover {
+  border-color: #646cff;
+  background-color: rgba(100, 108, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.dropdown-content.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-content a {
+  color: rgba(255, 255, 255, 0.87);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  font-family: 'Roboto Slab', serif;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(100, 108, 255, 0.2);
+  color: #646cff;
+}
+
+.dropdown-content a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dropdown-content a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .dropdown-menu-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dropdown-btn {
+    min-width: 250px;
+  }
+}
+/* ===============================================
+   TAB DIVS
+   =============================================== */
+
+.tab-container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: none;
+  margin-bottom: -1px;
+  justify-content: center;
+  gap: 0;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Slab', serif;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  z-index: 2;
+}
+
+.tab-btn:not(:first-child) {
+  margin-left: -1px;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(100, 108, 255, 0.5);
+  color: #646cff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 3;
+}
+
+.tab-content-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0 8px 8px 8px;
+  padding: 2rem;
+  min-height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeInTab 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h3 {
+  color: #646cff;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tab-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.tab-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Slab', serif;
+  min-width: 180px;
+  justify-content: flex-start;
+}
+
+.tab-links a:hover {
+  background: rgba(100, 108, 255, 0.1);
+  border-color: #646cff;
+  color: rgba(255, 255, 255, 0.87);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1) opacity(0.87);
+  transition: filter 0.3s ease;
+}
+
+.tab-links a:hover .contact-icon {
+  filter: brightness(0) invert(1) saturate(1.2);
+}
+
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tab responsive design */
+@media (max-width: 768px) {
+  .tab-buttons {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .tab-btn {
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .tab-btn:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .tab-btn:last-child {
+    border-bottom: none;
+  }
+  
+  .tab-content-box {
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .tab-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================================
+   HAMBURGER MENU
+   =============================================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.87);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-menu.active {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-nav-button {
+  display: block;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-family: 'Anka/Coder', monospace;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-button:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+  color: #646cff;
+}
+
+.mobile-nav-button:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-left h1 {
+    font-size: 1.5rem;
+  }
 }

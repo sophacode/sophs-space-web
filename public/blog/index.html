@@ -8,31 +8,75 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="blog-page">
-    <nav class="navbar">
-      <div class="nav-left">
-        <a href="/"><h1>> Soph's Blog</h1></a>
-      </div>
-      <div class="nav-right">
-        <a href="/" class="nav-button">Home</a>
-        <a href="/projects/" class="nav-button">Projects</a>
-        <a href="/blog/" class="nav-button">Blog</a>
-      </div>
-    </nav>
-    
-    <div class="content">
-      <h1>Blog</h1>
-      <p>Some ramblings with no place to go..</p>
-      <p>All the thoughts, Brain un-empty</p>
+    <div class="app">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="/"><h1>> Soph's Blog</h1></a>
+        </div>
+        <div class="nav-right">
+          <a href="/" class="nav-button">Home</a>
+          <a href="/projects/" class="nav-button">Projects</a>
+          <a href="/blog/" class="nav-button">Blog</a>
+        </div>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+        <div class="mobile-nav-menu">
+          <a href="/" class="mobile-nav-button">Home</a>
+          <a href="/projects/" class="mobile-nav-button">Projects</a>
+          <a href="/blog/" class="mobile-nav-button">Blog</a>
+        </div>
+      </nav>
       
-      <div class="blog-posts">
+      <div class="content">
+        <h1>Blog</h1>
+        <p>Some ramblings with no place to go..</p>
+        <p>All the thoughts, Brain un-empty</p>
+        
+        <div class="blog-posts">
 
-        <article class="blog-post">
-          <h2><a href="/blog/posts/i-made-a-website.html" class="blog-post-link">I made a website!</a></h2>
-          <div class="date">February 19, 2026</div>
-          <p>It's a blog! It exists! </p>
-          <a href="/blog/posts/i-made-a-website.html" class="read-more">Read more →</a>
-        </article>
+          <article class="blog-post">
+            <h2><a href="/blog/posts/i-made-a-website.html" class="blog-post-link">I made a website!</a></h2>
+            <div class="date">February 19, 2026</div>
+            <p>It's a blog! It exists! </p>
+            <a href="/blog/posts/i-made-a-website.html" class="read-more">Read more →</a>
+          </article>
+        </div>
       </div>
+      <footer class="footer">
+        <div class="footer-left">
+          <p>© 2026 Soph's Space</p>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:contact@sophs.space" class="footer-link">Contact</a>
+          <a href="#" class="footer-link">GitHub</a>
+        </div>
+      </footer>
     </div>
+    
+    <script>
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>
