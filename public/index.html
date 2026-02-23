@@ -6,71 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soph's Space</title>
     <link rel="stylesheet" href="/styles.css" />
-    <style>
-      .app {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .main-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-      }
-
-      .counter-section {
-        text-align: center;
-      }
-
-      .counter-section h1 {
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-      }
-
-      .counter-button {
-        background: linear-gradient(135deg, #646cff 0%, #747bff 100%);
-        border: none;
-        color: white;
-        padding: 1.5rem 3rem;
-        font-size: 1.5rem;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(100, 108, 255, 0.3);
-        font-family: inherit;
-      }
-
-      .counter-button:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(100, 108, 255, 0.4);
-      }
-
-      .counter-button:active:not(:disabled) {
-        transform: translateY(0);
-      }
-
-      .counter-button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-
-      .counter-description {
-        margin-top: 1.5rem;
-        color: #888;
-        font-size: 1.1rem;
-      }
-    </style>
   </head>
-  <body>
+  <body class="home-page">
     <div class="app">
       <nav class="navbar">
-        <div>
-          <img src="/nobgdark.svg" alt="Sophs.Space" class="nav-logo" />
+        <div class="nav-left">
+          <h1>> Soph's Space</h1>
         </div>
         <div class="nav-right">
           <a href="/" class="nav-button">Home</a>
@@ -81,32 +22,9 @@
       <main class="main-content">
         <h2>Hi, I'm Soph! This is my website, and it's a work in progress...</h2>
         <div class="counter-section">
-          <h1>Global Visitor Counter</h1>
-          <button class="counter-button" id="counterButton">
-            Count: <span id="counterValue">0</span>
-          </button>
-          <p class="counter-description">
-            This count will sync across all visitors soon..
-          </p>
+        <img src="/nobgdark.svg" alt="Logo of Sophs.Space" class="center-logo">
         </div>
       </main>
     </div>
-
-    <script>
-      // Load and manage counter from localStorage
-      const counterButton = document.getElementById('counterButton');
-      const counterValue = document.getElementById('counterValue');
-      
-      // Load initial count
-      let count = parseInt(localStorage.getItem('global-counter') || '0', 10);
-      counterValue.textContent = count;
-      
-      // Increment counter on click
-      counterButton.addEventListener('click', () => {
-        count++;
-        counterValue.textContent = count;
-        localStorage.setItem('global-counter', count.toString());
-      });
-    </script>
   </body>
 </html>
