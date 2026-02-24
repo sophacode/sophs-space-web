@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/tablogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POST_TITLE - Soph's Blog</title>
+    <title>Life of a Hobbyist - Soph's Blog</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="blog-post-page">
@@ -26,9 +26,9 @@
       
       <article class="full-blog-post">
         <header class="post-header">
-          <h1>POST_TITLE</h1>
+          <h1>The Life of a Hobbyist</h1>
           <div class="post-meta">
-            <time class="date">POST_DATE</time>
+            <time class="date">24 February 2026</time>
           </div>
         </header>
         
@@ -39,20 +39,31 @@
           
           <h2>heading</h2>
           <p>content</p>
+          <p class="fleuron"> *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚</p>
         </div>
-
-        <div class="addendum">
-          <h2> Addendums ⚊•.˚ᯓ★˖</h2>
-          <time class="date"></time>
-          <p> Addendum content</p>
-        </div>
-
-        <hr>
-        <p class="fleuron"> 
-          *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
-        </p>
-        
       </article>
     </div>
   </body>
 </html>
+
+<!-- 
+INSTRUCTIONS FOR CREATING A NEW BLOG POST:
+
+1. Copy this template file
+2. Rename it to your-post-title.html (use lowercase, hyphens for spaces)
+3. Replace the following placeholders:
+   - POST_TITLE: Your blog post title
+   - POST_DATE: Date in format "February 20, 2026"
+   - POST_EXCERPT: Brief description/first paragraph
+4. Add your content in the post-content div
+5. Save the file in /public/blog/posts/
+6. Update /public/blog/index.html to add a link to your new post:
+
+Add this to the blog-posts div:
+<article class="blog-post">
+  <h2><a href="/blog/posts/your-post-title.html" class="blog-post-link">POST_TITLE</a></h2>
+  <div class="date">POST_DATE</div>
+  <p>POST_EXCERPT</p>
+  <a href="/blog/posts/your-post-title.html" class="read-more">Read more →</a>
+</article>
+-->

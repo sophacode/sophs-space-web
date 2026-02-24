@@ -96,7 +96,7 @@
       </main>
       <footer class="footer">
         <div class="footer-left">
-          <p>© 2026 Soph's Space</p>
+          <p> &copy; 2026 Soph's Space</p>
         </div>
         <div class="footer-right">
           <p>Something here..</p>
@@ -106,17 +106,14 @@
     
     <script>
       function showTab(tabId) {
-        // Remove active class from all tab buttons and content
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
         
         tabButtons.forEach(button => button.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
         
-        // Add active class to clicked tab button
         event.target.classList.add('active');
         
-        // Show corresponding tab content
         document.getElementById(tabId).classList.add('active');
       }
       
@@ -128,7 +125,6 @@
         mobileMenu.classList.toggle('active');
       }
       
-      // Close mobile menu when clicking on a link
       document.addEventListener('DOMContentLoaded', function() {
         const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
         mobileNavButtons.forEach(button => {
