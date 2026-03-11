@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/tablogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Projects</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="project-page">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/"><h1>> Soph's Space</h1></a>
+      </div>
+      <div class="nav-right">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/projects/" class="nav-button">Projects</a>
+        <a href="/blog/" class="nav-button">Blog</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+
+      <div class="mobile-nav-menu">
+        <a href="/" class="mobile-nav-button">Home</a>
+        <a href="/projects/" class="mobile-nav-button">Projects</a>
+        <a href="/blog/" class="mobile-nav-button">Blog</a>
+      </div>
+    </nav>
+    
+    <div class="content blog-post-content">
+      <nav class="breadcrumb">
+        <a href="/projects/" class="breadcrumb-link">← Back to Projects</a>
+      </nav>
+      
+      <article class="full-blog-post">
+        <header class="post-header">
+          <h1>Future Project</h1>
+          <div class="post-meta">
+            <time class="date">Coming Soon</time>
+          </div>
+        </header>
+        
+        <div class="post-content">
+          <p>This is a placeholder for a future project. Check back soon for updates!</p>
+          
+          <h2>What's Coming</h2>
+          <p>More exciting projects and creations are on the way.</p>
+        </div>
+
+        <hr>
+        <p class="fleuron"> 
+          *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
+        </p>
+        
+      </article>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
+    <script src="/stars.js"></script>
+  </body>
+</html>

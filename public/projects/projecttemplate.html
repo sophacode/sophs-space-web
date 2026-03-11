@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/tablogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJECT_TITLE - Soph's Projects</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="project-page">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/"><h1>> Soph's Space</h1></a>
+      </div>
+      <div class="nav-right">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/projects/" class="nav-button">Projects</a>
+        <a href="/blog/" class="nav-button">Blog</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+
+      <div class="mobile-nav-menu">
+        <a href="/" class="mobile-nav-button">Home</a>
+        <a href="/projects/" class="mobile-nav-button">Projects</a>
+        <a href="/blog/" class="mobile-nav-button">Blog</a>
+      </div>
+    </nav>
+    
+    <div class="content blog-post-content">
+      <nav class="breadcrumb">
+        <a href="/projects/" class="breadcrumb-link">← Back to Projects</a>
+      </nav>
+      
+      <article class="full-blog-post">
+        <header class="post-header">
+          <h1>PROJECT_TITLE</h1>
+          <div class="post-meta">
+            <time class="date">PROJECT_DATE</time>
+          </div>
+        </header>
+        
+        <div class="post-content">
+          <p>Project description or excerpt goes here.</p>
+          
+          <h2>Overview</h2>
+          <p>Project overview content.</p>
+          
+          <h2>Technologies Used</h2>
+          <ul>
+            <li>Technology 1</li>
+            <li>Technology 2</li>
+            <li>Technology 3</li>
+          </ul>
+          
+          <h2>Features</h2>
+          <p>Feature descriptions.</p>
+          
+          <h2>Challenges & Solutions</h2>
+          <p>Challenges faced and how they were solved.</p>
+          
+          <h2>Outcome</h2>
+          <p>Final outcome and results.</p>
+        </div>
+
+        <div class="addendum">
+          <h2>Updates ⚊•.˚ᯓ★˖</h2>
+          <time class="date">UPDATE_DATE</time>
+          <p>Update content goes here.</p>
+        </div>
+
+        <hr>
+        <p class="fleuron"> 
+          *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
+        </p>
+        
+      </article>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
+    <script src="/stars.js"></script>
+  </body>
+</html>
