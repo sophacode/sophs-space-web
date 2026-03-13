@@ -24,11 +24,11 @@
 html {
   height: 100%;
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     radial-gradient(circle at 20% 30%, #2d1b4e 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, #0f192e 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, #0b1e38 0%, transparent 35%),
     radial-gradient(circle at 60% 70%, #200c21 0%, transparent 45%),
-    radial-gradient(circle at 30% 80%, #0a1d15 0%, transparent 40%),
+    radial-gradient(circle at 30% 80%, #05281b 0%, transparent 40%),
     radial-gradient(circle at 90% 60%, #1a0d2e 0%, transparent 30%),
     radial-gradient(ellipse at 50% 50%, #160b2f 0%, #120b1f 50%, #06040f 100%);
   background-attachment: fixed;
@@ -575,6 +575,28 @@ time {
 .post-content li {
   margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 0.87);
+}
+
+.post-content .todo-box-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-content .todo-box-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.post-content .todo-box-list li::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  flex: 0 0 0.9rem;
+  margin-top: 0.35rem;
 }
 
 .post-content img {
