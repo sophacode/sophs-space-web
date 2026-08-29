@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/tablogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homelab - Soph's Projects</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="project-page">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/"><h1>> Soph's Space</h1></a>
+      </div>
+      <div class="nav-right">
+        <a href="/" class="nav-button">Home</a>
+        <a href="/projects/" class="nav-button">Projects</a>
+        <a href="/blog/" class="nav-button">Blog</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </div>
+
+      <div class="mobile-nav-menu">
+        <a href="/" class="mobile-nav-button">Home</a>
+        <a href="/projects/" class="mobile-nav-button">Projects</a>
+        <a href="/blog/" class="mobile-nav-button">Blog</a>
+      </div>
+    </nav>
+    
+    <div class="content blog-post-content">
+      <nav class="breadcrumb">
+        <a href="/projects/" class="breadcrumb-link">← Back to Projects</a>
+        <a href="/blog/" class="breadcrumb-link">← Back to Blog</a>
+      </nav>
+      
+      <article class="full-blog-post">
+        <header class="post-header">
+          <h1>My Starter Homelab!</h1>
+          <div class="post-meta">
+            <time class="date">August 2026</time>
+          </div>
+        </header>
+        
+        <div class="post-content">
+          <p>A homelab is a private, self-hosted IT environment used to run personal
+            services, learning system admin skills and losing your mind (in a good
+            way, I promise). Mine is continually evolving, so I'll be updating this 
+            when more devices and services get added to my homelab! ...It'll never be 
+            enough services..need...moreeeee...
+          </p>
+
+          <p>This blog post will talk about my general experience setting up
+            some initial services on the server, whilst the specific process will be 
+            written up in the github repository for this homelab. (Soon...
+            I haven't written it yet) Additionally, as the post count for this project grows,
+            I'll turn this page into an index to organise all future posts about this project!
+          </p>
+
+          <h2>Why make a homelab?</h2>
+          <p>
+            It differs for everyone, but for me, I really liked the idea of having my 
+            own computer network I could mess around with, without risking breaking 
+            my gaming PC or any of my university equipment. Homelabs have really grown
+            in popularity in recent years, maybe due to the low need for really high-grade
+            equipment, or maybe society getting fed-up with paying subscriptions for 
+            anything and everything. Of course it can grow to a huge mad-scientist-level-lab,
+            but it can also be just an old laptop. 
+          </p>
+
+          <p>
+            The community around homelabbing is very welcoming to beginners, and there's
+            so many guides to help you get started. I used a variety of sources, but I just 
+            recommend going down a Youtube rabbithole to get started and see what kind of 
+            homelab and services works for you! 
+          </p>
+
+          <h2>Hardware</h2>
+          <p>
+            A homelab doesn't have to be those crazy 40U, ceiling tall server racks.
+            Mine for instance, is a used HP Prodesk I found, heavily discounted, on Vinted,
+            but it could even be your old laptop, or a Raspberry Pi. Currently, 
+            my homelab's specs are:
+          </p>
+          <ul>
+            <li>A 4-core Intel(R) Core(TM) i5-6500T CPU, running at 2.5GHz</li>
+            <li>A 8GB RAM </li>
+            <li>256GB Hard Disk Drive</li>
+          </ul>
+
+          <p>
+            So, not bad to be honest. Also not the greatest specs. But in this
+            economy, with used PC prices at an average of £100-300...paying 
+            about less than half of that average price for this PC felt like winning 
+            the lottery. 
+          </p>
+          <p>
+            For future upgrades, I would add more mini PCs like my current one to 
+            the cluster to increase the computing power and the RAM. As for storage,
+            a NAS is by far the option I'd go for first...if they didn't cost so much.
+            Hard drives are getting more and more difficult to come by at lower prices,
+            so buying the NAS as WELL as maybe 2 to 4 hard drives would have my 
+            bank account in whatever's worse than negative. Otherwise, I really want 
+            to try my hand at making my own storage solution - maybe a DAS or 
+            some amalgamation of a DIY Drive storage bay. 
+          </p>
+          <p>
+            But as for now, let's just look at the software and services
+            running on my homelab server right now!
+          </p>
+
+          <h2>Proxmox</h2>
+          <p>Proxmox is my chosen OS for my homelab. Whilst there are easier to
+            learn or beginner-friendly options like ZimaOS and TrueNAS, I wanted
+            to throw myself in the deep end to truly learn how every component
+            of my homelab works. Compared to other OS's limited command line and
+            app focused interfaces, Proxmox's Linux Container approach for services 
+            and robust resource management seemed the best option for troubleshooting
+            any future problems, even if there was a higher learning curve.
+          </p>
+
+          <p>
+            That isn't to say using Proxmox didn't have its own downsides. Its steeper
+            learning curve meant I made quite a few mistakes while setting it up such as...
+            selecting the wrong disk configuration during setup and having to redo the whole
+            set up process because of it...oooops. Also, compartmentalising every service
+            within Linux Containers means I have to deal with a LOT of ssh passwords - a 
+            problem that's high on my todo list to solve.
+          </p>
+
+          <h2>Services</h2>
+
+          <p>
+            On Proxmox, most services are run within Linux Containers (LXC's), Docker images
+            or their own Virtual Machines. The majority of mine have been spun up using 
+            LXC's. I started my first service (Nginx) the manual way, so I knew how the process worked,
+            but then, finding out about <a href="https://community-scripts.org">Proxmox
+            community scripts</a> felt like a game changer. The scripts on this site make 
+            it so much easier to spin up containers, condensing the whole process to one line
+            of terminal code!
+          </p>
+          <p> 
+            From this point on, most of the services I'll be talking about will have
+            their own blog/project posts, as I've had different experiences setting each one up: 
+            (The blog posts for these haven't been written for these yet... please hold...)
+          </p>
+          
+          <h2>My current Services</h2>
+          <div class="sub-grid">
+
+            <div class="sub-card">
+              <h3>Proxmox Virtual Environment (PVE)</h3>
+              <p>This is the hypervisor every other service runs on! Not
+                much to talk about further, it's already talked about in 
+                this project post :)
+              </p>
+            </div>
+            
+            <div class="sub-card">
+              <h3>Nginx Proxy Manager (NPM)</h3>
+              <p>Lets me access my services through public domain names 
+                rather than having to remember IP addresses. Essentially,
+                letting me self-host all my services using reverse proxies.
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Pi-hole</h3>
+              <p>An network-wide ad-blocker that blocks any ads through
+                DNS interception. 
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Filebrowser Quantum</h3>
+              <p>A web interface that lets me access the files on my hard drive's 
+                ZFS pool using a long, painful process (disk mounting).
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Tailscale</h3>
+              <p>Whilst I can access my homelab through DNS just online, its safer
+                to trap all the admin-related services I have within my tailscaled 
+                network to prevent any random people from accessing my services, even
+                if they don't have the credentials.
+              </p>
+            </div>
+          </div>
+
+          <h2>Services I want to add</h2>
+          <div class="sub-grid">
+            <div class="sub-card">
+              <h3>Jellyfin</h3>
+              <p>
+                Free me from the grasps of Netflix and Spotify...
+                Let me put all my physical media somewhere online...
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Self-hosted Minecraft Server</h3>
+              <p>
+                It's currently running on my PC, but I want
+                to have it run on my homelab so I don't have to
+                manually start it every time I want to play.
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Proxmox Backup Server</h3>
+              <p>
+                It's a good idea to back up the homelab incase everything 
+                on it just. dies. one day. I haven't decided which service
+                to use for it first, but I need a secondary drive to do the 
+                actual backing up to in order to carry this out.
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Monitoring Services</h3>
+              <p>
+                I haven't decided which specific service to use for this yet,
+                but as the homelab grows, I'll need something to monitor how
+                everything is operating. 
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>Frontend Dashboard</h3>
+              <p>Currently, I access everything through the PVE,
+                which works fine, but if I want everything to look
+                nice and user-friendly, a dashboard would be a great 
+                service to add next.  
+              </p>
+            </div>
+
+            <div class="sub-card">
+              <h3>And many more self hosted apps!</h3>
+              <p>I can't name every single thing I want to add to my homelab - 
+                this list would end up being miles long! The website 
+                <a href="https://selfh.st/apps/">Selfh.st</a> is like an 
+                app store for my homelab - and I'll slowly be making my way
+                through as many of these apps as I can as the project develops.
+              </p>
+            </div>
+          </div>
+            <p>
+              As the project grows, I'll be updating this page, any documentation
+              and future blog posts, so stay tuned! That's all I've got to say on my
+              end...now back to the lab I go... ehehehe....
+            </p>
+        </div>
+        <hr>
+        <p class="fleuron"> 
+          *ੈ✩‧₊˚༺☆༻*ੈ✩‧₊˚
+        </p>
+        
+      </article>
+    </div>
+
+    <script>
+      function toggleMobileMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-nav-menu');
+        
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking on a link
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileNavButtons = document.querySelectorAll('.mobile-nav-button');
+        mobileNavButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
+    <script src="/stars.js"></script>
+  </body>
+</html>

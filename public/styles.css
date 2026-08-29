@@ -146,6 +146,20 @@ h2 {
   display: inline-block;
 }
 
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Anka/Coder', monospace;
+  background: #5056d9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  background-clip: text;
+  display: inline-block;
+}
+
+
 a {
   color: #646cff;
   text-decoration: none;
@@ -153,7 +167,7 @@ a {
 }
 
 a:hover {
-  color: #747bff;
+  color: #393e9b;
   text-decoration: underline;
 }
 
@@ -363,8 +377,8 @@ time {
 }
 
 .nav-button:hover {
-  border-color: #646cff;
-  background-color: rgba(100, 108, 255, 0.1);
+  border-color: #393e9b;
+  background-color: rgba(57, 62, 155, 0.1);
 }
 
 /* ===============================================
@@ -376,8 +390,8 @@ time {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   margin-top: auto;
 }
 
@@ -408,7 +422,7 @@ time {
 }
 
 .footer-link:hover {
-  color: #646cff;
+  color: #393e9b;
 }
 
 /* ===============================================
@@ -429,6 +443,9 @@ time {
 
 .breadcrumb {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .breadcrumb-link {
@@ -508,8 +525,8 @@ time {
    =============================================== */
 
 .about-me-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   padding: 2rem;
   width: 80vw;
@@ -544,9 +561,9 @@ time {
 }
 
 .about-me-section:hover {
-  border-color: #646cff;
+  border-color: #393e9b;
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .about-me-container {
@@ -586,7 +603,7 @@ time {
 
 .feature-item:hover {
   background: rgba(100, 108, 255, 0.15);
-  border-color: rgba(100, 108, 255, 0.5);
+  border-color: #393e9b;
   transform: translateY(-3px);
 }
 
@@ -625,7 +642,7 @@ time {
 .about-divider-line {
   border: none;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.527), transparent);
   margin: 2rem 0;
 }
 
@@ -682,8 +699,9 @@ time {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  backdrop-filter: brightness(0.75);
   border-radius: 12px;
   padding: 2rem;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -691,13 +709,13 @@ time {
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: #646cff;
+  border-color: #393e9b;
 }
 
 .project-card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #646cff;
+  color: #393e9b;
 }
 
 .project-card p {
@@ -714,16 +732,17 @@ time {
 }
 
 .blog-post {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
   transition: border-color 0.3s ease;
+  backdrop-filter: brightness(0.75);
 }
 
 .blog-post:hover {
-  border-color: #646cff;
+  border-color: #393e9b;
 }
 
 .blog-post h2 {
@@ -767,7 +786,7 @@ time {
 }
 
 /* ===============================================
-   INDIVIDUAL BLOG POST
+   INDIVIDUAL BLOG POST (AND PROJECT POSTS)
    =============================================== */
 
 .blog-post-content {
@@ -775,10 +794,11 @@ time {
 }
 
 .full-blog-post {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 3rem;
+  backdrop-filter: brightness(0.75);
 }
 
 .post-header {
@@ -858,6 +878,38 @@ time {
 }
 
 /* ===============================================
+   INDIVIDUAL POST SUB-MENUS
+   =============================================== */
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.sub-card {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #393e9b73;
+  backdrop-filter: brightness(0.75);
+  border-radius: 6px;
+  padding: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sub-card:hover {
+  transform: translateY(-5px);
+  border-color: #646cff;
+}
+
+.sub-card p {
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+
+/* ===============================================
    DROPDOWN MENUS
    =============================================== */
 
@@ -892,7 +944,7 @@ time {
 }
 
 .dropdown-btn:hover {
-  border-color: #646cff;
+  border-color: #393e9b;
   background-color: rgba(100, 108, 255, 0.1);
   transform: translateY(-2px);
 }
